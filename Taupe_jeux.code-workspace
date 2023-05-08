@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Taupe_jeux",
+			"path": "."
+		},
+		{
+			"name": "images",
+			"path": "../../../../../xampp/htdocs/Pixi-taupe-play/images"
+		},
+		{
+			"name": "Sons d'animaux",
+			"path": "../../../../../xampp/htdocs/Pixi-taupe-play/Sons d'animaux"
+		}
+	],
+  "settings": {}
+}
