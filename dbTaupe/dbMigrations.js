@@ -20,7 +20,7 @@ con.connect(function (err) {
     ["","classique","10", ""],
     ["", "medium","30" ,""],
     ["", "royal", "50" , ""],
-    ["", "", "", ('true'),]
+    ["", "", "", ('true', 'true', '10')]
 
   ];
   con.query(sql, [values], function (err, result) {

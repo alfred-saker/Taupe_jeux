@@ -1,13 +1,17 @@
 <html>
   <head>
-    <link rel="stylesheet" href="#">
-    <link rel="shortcut icon" href="../images/Pikachu.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/Pikachu.png" type="image/x-icon">
   </head>
   <body>
     Hello, Alfred
-    <div class="wrapper-main" id="terrain">
+    <div class="temps">
     </div>
-   <script src="./node_modules/pixi.js/dist/pixi.js"></script>
-   <script src="game.js" type="module" ></script>
+    <div class="wrapper-main" id="terrain">
+      <span id="timer">00:00:00</span>
+      <h1 id="score" class="score">SCORE: <span>00</span></h1>
+    </div>
+   <script src="../node_modules/pixi.js/dist/pixi.js"></script>
+   <script src="game.js" type="module"></script>
   </body>
 </html>

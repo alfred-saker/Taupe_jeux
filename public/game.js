@@ -1,3 +1,27 @@
+const scoreEl = document.querySelector('.score span');
+
+let timer = document.getElementById('timer');
+let interval;
+let time = 0;
+function startTimer() {
+  interval = setInterval(function() {
+    time++;
+    timer.innerHTML = formatTime(time);
+  }, 1000);
+}
+
+function formatTime(time) {
+  let hours = Math.floor(time / 3600);
+  let minutes = Math.floor((time % 3600) / 60);
+  let seconds = time % 60;
+  return (
+    (hours < 10 ? '0' + hours : hours) +
+    ':' +
+    (minutes < 10 ? '0' + minutes : minutes) +
+    ':' +
+    (seconds < 10 ? '0' + seconds : seconds)
+  );
+}
 
 const ground = document.querySelector("#terrain");
 const app = new PIXI.Application({
@@ -18,44 +42,42 @@ background.position.x = 0;
 background.position.y = 400;
 app.stage.addChild( background );
 
-
-
 // Tableau images
 let imgArray = new Array()
 
 imgArray[0] = new Image();
-imgArray[0].src = './images/1.png';
-imgArray[0].bot ='/images/11.png';
+imgArray[0].src = 'images/1.png';
+imgArray[0].bot ='images/11.png';
 imgArray[0].width = 177;
 imgArray[0].height = 143;
 
 imgArray[1] = new Image();
-imgArray[1].src = './images/2.png';
-imgArray[1].bot ='/images/22.png';
+imgArray[1].src = 'images/2.png';
+imgArray[1].bot ='images/22.png';
 imgArray[1].width = 139;
 imgArray[1].height = 136;
 
 imgArray[2] = new Image();
-imgArray[2].src = './images/3.png';
-imgArray[2].bot ='/images/33.png';
+imgArray[2].src = 'images/3.png';
+imgArray[2].bot ='images/33.png';
 imgArray[2].width = 135;
 imgArray[2].height = 146;
 
 imgArray[3] = new Image();
-imgArray[3].src = './images/4.png';
-imgArray[3].bot ='/images/44.png';
+imgArray[3].src = 'images/4.png';
+imgArray[3].bot ='images/44.png';
 imgArray[3].width = 150;
 imgArray[3].height = 140;
 
 imgArray[4] = new Image();
-imgArray[4].src = './images/Pikachu.png';
-imgArray[4].bot ='/images/pikachu_.png';
+imgArray[4].src = 'images/Pikachu.png';
+imgArray[4].bot ='images/pikachu_.png';
 imgArray[4].width = 144;
 imgArray[4].height = 130;
 
 imgArray[5] = new Image();
-imgArray[5].src = './images/6.png';
-imgArray[5].bot ='/images/66.png';
+imgArray[5].src = 'images/6.png';
+imgArray[5].bot ='images/66.png';
 imgArray[5].width = 196;
 imgArray[5].height = 196;
 
@@ -136,11 +158,29 @@ function smashAnimal(){
   console.log(this.holeIndex);
   animalsArray[this.holeIndex] = null;
   app.stage.removeChild(this);
+  // if (animalsArray[this.holeIndex] == imgArray[0].src){
+  //   scoreEl.content=10;
+  // }else if (animalsArray[this.holeIndex] == imgArray[1].src){
+  //   scoreEl.content=20;
+  // }else if (animalsArray[this.holeIndex] == imgArray[2].src){
+  //   scoreEl.content=30;
+  // }else if (animalsArray[this.holeIndex] == imgArray[3].src){
+  //   scoreEl.content=40;
+  // }else if (animalsArray[this.holeIndex] == imgArray[4].src){
+  //   scoreEl.content=40;
+  // }else if (animalsArray[this.holeIndex] == imgArray[6].src){
+  //   scoreEl.content=40;
+  // }
+  // else{
+  //   scoreEl.content=0;
+  // }
+
+  
+  // animalsArray[this.holeIndex] = imgArray[this.holeIndex].bot;
 
   console.log(this.position.x);
   console.log(this.position.y);
   console.log(imgArray[this.holeIndex]);
-  // createAnimalWithDelay(this.holeIndex, 100)
 
 }
 
